@@ -1,10 +1,4 @@
 # **Finding Lane Lines on the Road** 
-
-[//]: # (Image References)
-
-[image1]: ./preprocessing.jpg "Preprocessing road images"
-[image2]: ./sample_images.jpg "Sample images from the pipeline"
-[image3]: ./solidYellowLeft.gif "Single line lanes"
 ---
 ### Reflection
 
@@ -17,7 +11,7 @@ My pipeline consisted of 6 steps. For each image in the test folder I iterated o
 - Third step I used the canny edge detector algorithm to extract edges from the blurred image. I used a lower threshold of 100 and upper threshold of 200. Again from the images in the test folder these seemed to work well eliminating alot of the noise and getting the lanes.
 - Fourth step was to select a region of interest that would emcompass the lanes on the road. I opted for a triangular region of interest whose peak is at a point half way the width of the image and base points were at $\frac{1}{10}$ from the edge of the image. This covers the lanes properly without the extra clutter of the items on the side of the road.
 
-![alt text][image1]
+![alt text](./preprocessing.jpg "Preprocessing road images")
 Images from the preprocessing part of the pipeline - the first is the original image, the second is the identification of edges in the image with canny edge detector. The third is the triangular region of interest mask on the grayscale image.
 
 - Fifth step was to use the probabilistic hough transform to detect lines from the edges in the region of interest selected. I used the following parameters
@@ -31,7 +25,7 @@ Images from the preprocessing part of the pipeline - the first is the original i
 	```
 - Final step was to draw the lines on the images using the original `draw_lines` function. Example images from the pipeline for processing the images in the test folder are shown below. 
 
-![alt text][image2]
+![alt text](./sample_images.jpg "Sample images from the pipeline")
 Example images from running the pipeline on images in the test_images folder
 
 ### Drawing a single line on the lanes
@@ -46,7 +40,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 	* Right lane line: y2 = width_of_image and x1 = 0.55 x length_of_image
 
 	```
-![alt text][image3]
+![alt text](./solidYellowLeft.gif "Single line lanes")
 
 Depiction of the full pipepline with solid lines for the driving lanes
 

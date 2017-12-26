@@ -40,7 +40,8 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 	* Right lane line: y2 = width_of_image and x1 = 0.55 x length_of_image
 
 	```
-![alt text](./solidYellowLeft.gif "Single line lanes")
+
+<img src="https://github.com/emwebaze/carND/blob/master/term1/prjt1-Lanelines/solidYellowLeft.gif" width="500" />
 
 Depiction of the full pipepline with solid lines for the driving lanes
 
